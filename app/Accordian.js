@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, FlatList, StyleSheet} from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet} from "react-native";
 import { Colors } from './Colors';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -24,20 +24,8 @@ export default class Accordian extends Component{
             <View style={styles.parentHr}/>
             {
                 this.state.expanded &&
-                <View style={{}}>
-                    <FlatList
-                    data={this.state.data}
-                    numColumns={1}
-                    scrollEnabled={false}
-                    renderItem={({item, index}) => 
-                        <View>
-                            <TouchableOpacity style={[styles.childRow, styles.button, item.value ? styles.btnInActive : styles.btnActive]} onPress={()=>this.onClick(index)}>
-                                <Text style={[styles.font, styles.itemInActive]} >{item.key}</Text>
-                                <Icon name={'check-circle'} size={24} color={ item.value ? Colors.LIGHTGRAY : Colors.GREEN} />
-                            </TouchableOpacity>
-                            <View style={styles.childHr}/>
-                        </View>
-                    }/>
+                <View style={styles.child}>
+                    <Text>{this.props.data}</Text>    
                 </View>
             }
             
@@ -121,6 +109,10 @@ const styles = StyleSheet.create({
     },
     colorInActive:{
         borderColor: Colors.DARKGRAY,
+    },
+    child:{
+        backgroundColor: Colors.LIGHTGRAY,
+        padding:16,
     }
     
 });
