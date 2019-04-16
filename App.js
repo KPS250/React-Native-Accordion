@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations :[
+      menu :[
         { 
           title: 'Non Veg Biryanis', 
           data: [
@@ -58,7 +58,7 @@ export default class App extends Component {
 
   renderAccordians=()=> {
     const items = [];
-    for (item of this.state.locations) {
+    for (item of this.state.menu) {
         items.push(
             <Accordian 
                 title = {item.title}
