@@ -33,12 +33,6 @@ export default class Accordian extends Component{
     )
   }
 
-  onClick=(index)=>{
-    const temp = this.state.data.slice()
-    temp[index].value = !temp[index].value
-    this.setState({data: temp})
-  }
-
   toggleExpand=()=>{
     this.setState({expanded : !this.state.expanded})
   }
