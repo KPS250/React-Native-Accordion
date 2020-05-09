@@ -1,11 +1,9 @@
-import React, {Component, createRef} from 'react';
+import React, {Component} from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager} from "react-native";
 import { Colors } from './Colors';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default class Accordian extends Component{
-
-    accoridan = createRef();
 
     constructor(props) {
         super(props);
