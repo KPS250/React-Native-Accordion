@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet} from "react-native";
+import React, {Component, createRef} from 'react';
+import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager} from "react-native";
 import { Colors } from './Colors';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
 export default class Accordian extends Component{
+
+    accoridan = createRef();
 
     constructor(props) {
         super(props);
@@ -11,13 +13,17 @@ export default class Accordian extends Component{
           data: props.data,
           expanded : false,
         }
+
+        if (Platform.OS === 'android') {
+            UIManager.setLayoutAnimationEnabledExperimental(true);
+        }
     }
   
   render() {
 
     return (
        <View>
-            <TouchableOpacity style={styles.row} onPress={()=>this.toggleExpand()}>
+            <TouchableOpacity ref={this.accordian} style={styles.row} onPress={()=>this.toggleExpand()}>
                 <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
                 <Icon name={this.state.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} color={Colors.DARKGRAY} />
             </TouchableOpacity>
@@ -34,6 +40,7 @@ export default class Accordian extends Component{
   }
 
   toggleExpand=()=>{
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     this.setState({expanded : !this.state.expanded})
   }
 
