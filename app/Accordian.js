@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, FlatList, StyleSheet} from "react-native";
+import { View, TouchableOpacity, Text, FlatList, StyleSheet, LayoutAnimation, Platform, UIManager} from "react-native";
 import { Colors } from './Colors';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -10,6 +10,10 @@ export default class Accordian extends Component{
         this.state = { 
           data: props.data,
           expanded : false,
+        }
+
+        if (Platform.OS === 'android') {
+            UIManager.setLayoutAnimationEnabledExperimental(true);
         }
     }
   
@@ -52,6 +56,7 @@ export default class Accordian extends Component{
   }
 
   toggleExpand=()=>{
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     this.setState({expanded : !this.state.expanded})
   }
 
