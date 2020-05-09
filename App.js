@@ -12,36 +12,36 @@ export default class App extends Component {
         { 
           title: 'Non Veg Biryanis', 
           data: [
-            {key:'Chicken Biryani', value:'false'},
-            {key:'Mutton Biryani', value:'false'},
-            {key:'Prawns Biryani', value:'false'},
+            {key:'Chicken Biryani', value:false},
+            {key:'Mutton Biryani', value:false},
+            {key:'Prawns Biryani', value:false},
           ] 
         },
         { 
           title: 'Pizzas',
           data: [
-            {key:'Chicken Dominator', value:'false'},
-            {key:'Peri Peri Chicken', value:'false'},
-            {key:'Indie Tandoori Paneer', value:'false'},
-            {key:'Veg Extraveganza', value:'false'}
+            {key:'Chicken Dominator', value:false},
+            {key:'Peri Peri Chicken', value:false},
+            {key:'Indie Tandoori Paneer', value:false},
+            {key:'Veg Extraveganza', value:false}
           ]
         },
         { 
          title: 'Drinks',
          data: [
-           {key:'Cocktail',value:'false'},
-           {key:'Mocktail',value:'false'},
-           {key:'Lemon Soda',value:'false'},
-           {key:'Orange Soda', value:'false'}
+           {key:'Cocktail', value:false},
+           {key:'Mocktail', value:false},
+           {key:'Lemon Soda', value:false},
+           {key:'Orange Soda', value:false}
           ]
         },
         { 
           title: 'Deserts',
           data: [
-            {key:'Choco Lava Cake', value:'false'},
-            {key:'Gulabjamun', value:'false'},
-            {key:'Kalajamun', value:'false'},
-            {key:'Jalebi', value:'false'}
+            {key:'Choco Lava Cake', value:false},
+            {key:'Gulabjamun', value:false},
+            {key:'Kalajamun', value:false},
+            {key:'Jalebi', value:false}
           ]
         },
       ]

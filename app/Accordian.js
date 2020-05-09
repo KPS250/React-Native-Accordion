@@ -18,7 +18,7 @@ export default class Accordian extends Component{
     return (
        <View>
             <TouchableOpacity style={styles.row} onPress={()=>this.toggleExpand()}>
-                <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
+                <Text style={[styles.title]}>{this.props.title}</Text>
                 <Icon name={this.state.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} color={Colors.DARKGRAY} />
             </TouchableOpacity>
             <View style={styles.parentHr}/>
@@ -31,9 +31,9 @@ export default class Accordian extends Component{
                     scrollEnabled={false}
                     renderItem={({item, index}) => 
                         <View>
-                            <TouchableOpacity style={[styles.childRow, styles.button, item.value ? styles.btnInActive : styles.btnActive]} onPress={()=>this.onClick(index)}>
+                            <TouchableOpacity style={[styles.childRow, styles.button, item.value ? styles.btnActive : styles.btnInActive]} onPress={()=>this.onClick(index)}>
                                 <Text style={[styles.font, styles.itemInActive]} >{item.key}</Text>
-                                <Icon name={'check-circle'} size={24} color={ item.value ? Colors.LIGHTGRAY : Colors.GREEN} />
+                                <Icon name={'check-circle'} size={24} color={ item.value ? Colors.GREEN :  Colors.LIGHTGRAY } />
                             </TouchableOpacity>
                             <View style={styles.childHr}/>
                         </View>
@@ -61,9 +61,6 @@ const styles = StyleSheet.create({
     container:{
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    font:{
-       // fontFamily: Fonts.bold,
     },
     button:{
         width:'100%',
